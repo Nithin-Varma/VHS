@@ -1,14 +1,13 @@
-// import LanguagesButton from '@/components/languages-button';
-import ThemeButton from '@/components/theme-button';
-import { HStack, IconButton } from '@chakra-ui/react';
-import { ReactNode } from 'react';
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import {
   Box,
   Flex,
   Avatar,
+  HStack,
   Link,
+  IconButton,
   Button,
-  Text,
   Menu,
   MenuButton,
   MenuList,
@@ -18,89 +17,72 @@ import {
   useColorModeValue,
   Stack,
   useColorMode,
-  Center,
-} from '@chakra-ui/react';
-import { 
-  MoonIcon, 
-  SunIcon,
-  HamburgerIcon,
-  CloseIcon,
-  ChevronDownIcon,
-  ChevronRightIcon, 
-} from '@chakra-ui/icons';
+} from "@chakra-ui/react";
+import type { ReactNode } from "react";
 
-
-const Links = ['Activities', 'Achievements', 'Faculty', 'Founders', 'About'];
+const Links = ["Home", "Activities", "Faculty", "Acchievements", "Events", "About Us"];
 
 const NavLink = ({ children }: { children: ReactNode }) => (
   <Link
     px={2}
     py={1}
-    rounded={'md'}
+    rounded="md"
     _hover={{
-      textDecoration: 'none',
-      bg: useColorModeValue('gray.200', 'gray.700'),
+      textDecoration: "none",
+      fontSize: "xl",
+      textShadow: "2px 2px 2px #1E90FF",
+      // bg: useColorModeValue("gray.200", "gray.700"),
     }}
-    href={'#'}>
+    href="#"
+  >
     {children}
   </Link>
 );
 
-const Header = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
+export default function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  // const { isOpen, onToggle } = useDisclosure();
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
-    <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
-        <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-          <IconButton
-            size={'md'}
-            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            aria-label={'Open Menu'}
-            display={{ md: 'none' }}
-            onClick={isOpen ? onClose : onOpen}
-          />
-          <HStack spacing={'96'} alignItems={'center'}>
-            {/* <Box> */}
-              <HStack spacing={'1'}>
-                
-                <Text textColor={'blue.400'} textShadow={'xl'} fontWeight={'bold'} fontSize={'3xl'}>
-                Vivekananda High School
-                </Text>
-              </HStack>
-              {/* </Box> */}
-            <HStack
-              as={'nav'}
-              spacing={4}
-              display={{ base: 'none', md: 'flex' }}>
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
-              ))}
-            </HStack>
-          </HStack>
-          <Flex alignItems={'center'}>
-          <Stack direction={'row'} spacing={7}>
-            <Button onClick={toggleColorMode}>
-                {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-              </Button>
-            </Stack>
-          </Flex>
-        </Flex>
+    <Box bg={useColorModeValue("#1E90FF", "#1E90FF")} px={4}>
+      <Flex h={16} alignItems="center" justifyContent="space-between">
+        <IconButton
+          size="md"
+          icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+          aria-label="Open Menu"
+          display={{ md: "none" }}
+          onClick={isOpen ? onClose : onOpen}
+        />
+        {/* <HStack spacing="96" alignItems="center"> */}
+        <Avatar size="md" borderRadius="full" src="/assets/2.png" />
 
-        {isOpen ? (
-          <Box pb={4} display={{ md: 'none' }}>
-            <Stack as={'nav'} spacing={4}>
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
-              ))}
-            </Stack>
-          </Box>
-        ) : null}
-      </Box>
-    </>
-    
+        <HStack
+          as="nav"
+          spacing={8}
+          fontWeight="bold"
+          fontFamily="sans-serif"
+          display={{ base: "none", md: "flex" }}
+        >
+          {Links.map((link) => (
+            <NavLink key={link}>{link}</NavLink>
+          ))}
+        </HStack>
+        <HStack spacing={8}>
+          <Link onClick={toggleColorMode}>
+            {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+          </Link>
+        </HStack>
+      </Flex>
+
+      {isOpen ? (
+        <Box pb={4} display={{ md: "none" }}>
+          <Stack as="nav" spacing={4}>
+            {Links.map((link) => (
+              <NavLink key={link}>{link}</NavLink>
+            ))}
+          </Stack>
+        </Box>
+      ) : null}
+    </Box>
   );
-};
-
-export default Header;
+}
