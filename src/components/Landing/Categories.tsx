@@ -69,24 +69,24 @@ import {
   
   export default function Categories() {
     return (
-      <Box p={4}>
+      <Box p={24}>
         <Stack spacing={4} as={Container} maxW={'3xl'} textAlign={'center'}>
           <Heading fontSize={{ base: '2xl', sm: '4xl' }} fontWeight={'bold'}>
-            Short heading
+            Check out Our Activities, Achievements, Faculty and so on
           </Heading>
-          <Text color={'gray.600'} fontSize={{ base: 'sm', sm: 'lg' }}>
+          {/* <Text color={'gray.600'} fontSize={{ base: 'sm', sm: 'lg' }}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
             obcaecati ut cupiditate pariatur, dignissimos, placeat amet officiis.
-          </Text>
+          </Text> */}
         </Stack>
   
-        <Container maxW={'7xl'} mt={8}>
+        <Container maxW={'7xl'} mt={12}>
           <Flex flexWrap="wrap" gridGap={28} align="center" justify="center">
             <Card
               heading={'Activities'}
               icon={<Icon as={FcAssistant} w={10} h={10} alignContent="center" />}
               description={
-                'Lorem ipsum dolor sit amet catetur, adipisicing elit.'
+                "Activities since it's established."
               }
               href={'#'}
             />
@@ -94,7 +94,7 @@ import {
               heading={'Events'}
               icon={<Icon as={FcCollaboration} w={10} h={10} />}
               description={
-                'Lorem ipsum dolor sit amet catetur, adipisicing elit.'
+                'Events that we Conduct in every Academic Year'
               }
               href={'#'}
             />
@@ -102,7 +102,7 @@ import {
               heading={'Achievements'}
               icon={<Icon as={FcDonate} w={10} h={10} />}
               description={
-                'Lorem ipsum dolor sit amet catetur, adipisicing elit.'
+                'Our Proud moments that achieved by our pupils.'
               }
               href={'#'}
             />
@@ -110,7 +110,7 @@ import {
               heading={'Faculty'}
               icon={<Icon as={FcManager} w={10} h={10} />}
               description={
-                'Lorem ipsum dolor sit amet catetur, adipisicing elit.'
+                'Our Strength behind VHS'
               }
               href={'#'}
             />
@@ -118,7 +118,7 @@ import {
               heading={'About Us'}
               icon={<Icon as={FcAbout} w={10} h={10} />}
               description={
-                'Lorem ipsum dolor sit amet catetur, adipisicing elit.'
+                'More info about VHS'
               }
               href={'#'}
             />
