@@ -4,6 +4,7 @@ import {
   Container,
   Stack,
   Text,
+  Avatar,
   useColorModeValue,
   VisuallyHidden,
 } from '@chakra-ui/react';
@@ -73,7 +74,8 @@ export default function SmallWithLogoLeft() {
         spacing={4}
         justify={{ base: 'center', md: 'space-between' }}
         align={{ base: 'center', md: 'center' }}>
-        <Logo />
+        <Avatar size="md" borderRadius="full" src="/assets/images/vhs_swamivivekanda.jpeg" />
+
         <Text>© Vivekananda High School. All rights reserved</Text>
         <Stack direction={'row'} spacing={6}>
           <SocialButton label={'Twitter'} href={'#'}>
@@ -82,7 +84,7 @@ export default function SmallWithLogoLeft() {
           <SocialButton label={'YouTube'} href={'#'}>
             <FaYoutube />
           </SocialButton>
-          <SocialButton label={'Instagram'} href={'#'}>
+          <SocialButton label={'Instagram'} href={'https://www.instagram.com/_vivekananda_high_school_/'}>
             <FaInstagram />
           </SocialButton>
         </Stack>

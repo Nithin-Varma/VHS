@@ -54,7 +54,7 @@ export default function Header() {
           onClick={isOpen ? onClose : onOpen}
         />
         {/* <HStack spacing="96" alignItems="center"> */}
-        <Avatar size="md" borderRadius="full" src="/assets/2.png" />
+        <Avatar size="md" borderRadius="full" src="/assets/images/vhs_swamivivekanda.jpeg" />
 
         <HStack
           as="nav"
