@@ -44,7 +44,7 @@ import {
               textShadow="6px 3px 9px #6C0BA9"
               fontSize={useBreakpointValue({ base: "3xl", md: "6xl" })}
             >
-              We Don&apos;t Teach
+              We Don't Teach
             </Text>
             <Text
               color="whiteAlpha.800"
