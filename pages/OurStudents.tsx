@@ -1,55 +1,34 @@
-import { 
-  Box,
-  Container,
-  Flex,
-  Stack,
-  Heading,
-  useBreakpointValue,
- } from "@chakra-ui/react";
 
+import { Box, Stack } from "@chakra-ui/react";
 import YouTube from "react-youtube";
 
 const VideoGallery = ({ videoIds }) => {
+  const youtubeOptions = {
+    width: "300px",
+    height: "200px",
+  };
+
   return (
-    <Box w="100%" maxW="800px" mx="auto">
-      <Stack maxW={useBreakpointValue({ base: "xl", md: "xl" })}>
-      <Container maxW={'7xl'} mt={12}>
-        <Flex flexWrap="wrap" gridGap={28} align="center" justify="center">
-          {videoIds.map((videoId, index) => (
-            <Box key={index}>
-              <YouTube videoId={videoId} />
-            </Box>
-          ))}
-        </Flex>
-      </Container>
-      </Stack>
+    <Box display="grid" gridTemplateColumns="repeat(auto-fill, minmax(300px, 1fr))" gap={4}>
+      {videoIds.map((videoId, index) => (
+        <Box key={index} mx="auto" p={4} maxW="300px">
+          <YouTube videoId={videoId} opts={youtubeOptions} />
+        </Box>
+      ))}
     </Box>
   );
 };
 
 const MyPage = () => {
-  const videoIds = [
-    "0a1USNHcczI", 
-    "0a1USNHcczI", 
-    "0a1USNHcczI"
-  ];
+  const videoIds = ["0a1USNHcczI", "lC1HKwAFxIo"];
 
   return (
-    <>
-    <Box p={24}>
-        <Stack spacing={4} as={Container} maxW={'3xl'} textAlign={'center'}>
-          <Heading fontSize={{ base: '2xl', sm: '4xl' }} fontWeight={'bold'}>
-            Check out Our Activities, Achievements, Faculty and so on
-          </Heading>
-        </Stack>
-    <Container maxW={'7xl'} mt={12}>
-            <Flex flexWrap="wrap" gridGap={28} align="center" justify="center">
-                <VideoGallery videoIds={videoIds} />
-            
-            </Flex>
-            </Container>
-            </Box>
-    </>
+    <Stack direction="column" align="center" spacing={4}>
+      <h1>Video Gallery</h1>
+      <Box w="100%" maxW="1200px">
+        <VideoGallery videoIds={videoIds} />
+      </Box>
+    </Stack>
   );
 };
 
