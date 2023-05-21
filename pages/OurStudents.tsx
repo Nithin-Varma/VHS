@@ -20,7 +20,7 @@ const VideoGallery = ({ videoIds }) => {
 };
 
 const MyPage = () => {
-  const videoIds = ["0a1USNHcczI", "lC1HKwAFxIo"];
+  const videoIds = ["0a1USNHcczI", "lC1HKwAFxIo", "TQs3Wl8OIlg"];
 
   return (
     <Box p={20}>
