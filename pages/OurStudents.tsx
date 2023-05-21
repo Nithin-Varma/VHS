@@ -1,5 +1,5 @@
 
-import { Box, Stack } from "@chakra-ui/react";
+import { Box, Stack, Container, Heading } from "@chakra-ui/react";
 import YouTube from "react-youtube";
 
 const VideoGallery = ({ videoIds }) => {
@@ -23,12 +23,18 @@ const MyPage = () => {
   const videoIds = ["0a1USNHcczI", "lC1HKwAFxIo"];
 
   return (
-    <Stack direction="column" align="center" spacing={4}>
-      <h1>Video Gallery</h1>
+    <Box p={20}>
+    <Stack direction="column" align="center" spacing={8}>
+      <Stack spacing={4} as={Container} maxW={'3xl'} textAlign={'center'}>
+          <Heading fontSize={{ base: '2xl', sm: '4xl' }} fontWeight={'bold'}>
+            Our Students
+          </Heading>
+        </Stack>
       <Box w="100%" maxW="1200px">
         <VideoGallery videoIds={videoIds} />
       </Box>
     </Stack>
+    </Box>
   );
 };
 

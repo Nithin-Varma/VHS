@@ -17,6 +17,10 @@ import {
     FcDonate,
     FcManager,
   } from 'react-icons/fc';
+  import NextLink from "next/link";
+  import OurStudents from "../../../pages/OurStudents"
+
+  import {useRouter} from 'next/router';
   
   interface CardProps {
     heading: string;
@@ -68,36 +72,34 @@ import {
   };
   
   export default function Categories() {
+    const router = useRouter();
     return (
       <Box p={24}>
         <Stack spacing={4} as={Container} maxW={'3xl'} textAlign={'center'}>
           <Heading fontSize={{ base: '2xl', sm: '4xl' }} fontWeight={'bold'}>
             Check out Our Activities, Achievements, Faculty and so on
           </Heading>
-          {/* <Text color={'gray.600'} fontSize={{ base: 'sm', sm: 'lg' }}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-            obcaecati ut cupiditate pariatur, dignissimos, placeat amet officiis.
-          </Text> */}
         </Stack>
   
         <Container maxW={'7xl'} mt={12}>
           <Flex flexWrap="wrap" gridGap={28} align="center" justify="center">
+  
             <Card
               heading={'Activities'}
               icon={<Icon as={FcAssistant} w={10} h={10} alignContent="center" />}
               description={
                 "Activities since it's established."
               }
-              href={'#'}
             />
+            <NextLink href="OurStudents" passHref>
             <Card
-              heading={'Events'}
+              heading={'Our Students'}
               icon={<Icon as={FcCollaboration} w={10} h={10} />}
               description={
                 'Events that we Conduct in every Academic Year'
               }
-              href={'#'}
             />
+            </NextLink>
             <Card
               heading={'Achievements'}
               icon={<Icon as={FcDonate} w={10} h={10} />}
