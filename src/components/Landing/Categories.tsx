@@ -26,10 +26,9 @@ import {
     heading: string;
     description: string;
     icon: ReactElement;
-    href: string;
   }
   
-  const Card = ({ heading, description, icon, href }: CardProps) => {
+  const Card = ({ heading, description, icon }: CardProps) => {
     return (
       <Box
         maxW={{ base: 'full', md: '275px' }}
@@ -63,9 +62,6 @@ import {
               {description}
             </Text>
           </Box>
-          <Button variant={'link'} colorScheme={'blue'} size={'sm'}>
-            Learn more
-          </Button>
         </Stack>
       </Box>
     );
@@ -96,7 +92,7 @@ import {
               heading={'Our Students'}
               icon={<Icon as={FcCollaboration} w={10} h={10} />}
               description={
-                'Events that we Conduct in every Academic Year'
+                'Just check out how and what does our students doing.'
               }
             />
             </NextLink>
@@ -106,7 +102,6 @@ import {
               description={
                 'Our Proud moments that achieved by our pupils.'
               }
-              href={'#'}
             />
             <Card
               heading={'Faculty'}
@@ -114,7 +109,6 @@ import {
               description={
                 'Our Strength behind VHS'
               }
-              href={'#'}
             />
             <Card
               heading={'About Us'}
@@ -122,7 +116,6 @@ import {
               description={
                 'More info about VHS'
               }
-              href={'#'}
             />
           </Flex>
         </Container>
