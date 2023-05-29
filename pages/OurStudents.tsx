@@ -20,7 +20,7 @@ const VideoGallery = ({ videoIds }) => {
 };
 
 const MyPage = () => {
-  const videoIds = ["0a1USNHcczI", "lC1HKwAFxIo", "TQs3Wl8OIlg"];
+  const videoIds = ["CUV6SaLcTIc", "lC1HKwAFxIo", "MTUpKMgMQ-U","9Sdpl10Arw4", "DE1xpW77LTs", "TAxVQNBozyk", "JrieWWnLIfY", "E-xdMRe24QQ", "Qu-PSKD0HLM", "P-Be7cUVuO8", "AwdOOs-fVgk", "yk3f6Pe-8WY", "02Jaw2Y3ags", "/aLDq_rCBs9k"];
 
   return (
     <Box p={20}>
